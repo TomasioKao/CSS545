@@ -1,0 +1,32 @@
+{% extends 'shared/layout.html' %}
+{% block body %}
+<section>
+    <div class="container">
+        <a href="/team/createperformance" class="btn btn-warning">ADD NEW</a>
+        <P></P>
+        <div class="row">
+            {% for performance in performance_list %}
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ performance.name }}</h3>
+                        <h4 class="card-title"># {{ performance.number }}</h4>
+                        <p class="card-text">min: {{ performance.min }}</p>
+                        <p class="card-text">reb: {{ performance.reb }}</p>
+                        <p class="card-text">pts: {{ performance.pts }}</p>
+                        <p class="card-text">ast: {{ performance.ast }}</p>
+                        <p class="card-text">stl: {{ performance.stl }}</p>
+                        <p class="card-text">blk: {{ performance.blk }}</p>
+                        <p class="card-text">to: {{ performance.to }}</p>
+                        <p class="card-text">pf: {{ performance.pf }}</p>
+                        <div>
+                            <a href="/team/{{ performance.id }}/editperformance" class="btn btn-warning">Edit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

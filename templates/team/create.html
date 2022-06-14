@@ -1,0 +1,57 @@
+{% extends 'shared/layout.html' %}
+{% block body %}
+<section>
+    <div class="container py-5">
+        <h2>PLEASE FILL IN AS FOLLOWS</h2>
+        
+        <div class="card mt-3">
+            <div class="card-header">
+                <h4 class="m-0">ADD TALENT</h4>
+            </div>
+            <div class="card-body">
+
+                <form method="POST">
+                    {{ form.hidden_tag() }} 
+                    
+                    <div class="form-group">
+                        {{ form.number.label }}
+                        {{ form.number(class = "form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.name.label }}
+                        {{ form.name(class = "form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.img.label }}
+                        {{ form.img(class = "form-control", value = "https://") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.position.label }}
+                        {{ form.position(class = "form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.country.label }}
+                        {{ form.country(class = "form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.height.label }}
+                        {{ form.height(class = "form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.weight.label }}
+                        {{ form.weight(class = "form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.age.label }}
+                        {{ form.age(class = "form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.submit(class = "btn btn-primary") }}
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+</section>
+{% endblock %}

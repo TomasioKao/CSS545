@@ -1,0 +1,28 @@
+{% extends 'shared/layout.html' %}
+{% block body %}
+<section>
+    <div class="container">
+        <h2>OUR TEAMS</h2>
+        <div class="row">
+            {% for talent in talent_list %}
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <img class="card-img-top" src="{{ talent.img }}" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ talent.name }}</h4>
+                        <p>
+                            <span class="badge-info">{{ talent.position }}</span>
+                        </p>
+                        <p class="card-text">#{{ talent.number}}</p>
+                        <div>
+                            <a href="/team/{{ talent.id }}/show" class="btn btn-primary">Detail</a>
+                            <a href="/team/{{ talent.id }}/edit" class="btn btn-warning">Edit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

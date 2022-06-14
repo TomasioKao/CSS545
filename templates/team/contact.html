@@ -1,0 +1,29 @@
+{% extends 'shared/layout.html' %}
+{% block body %}
+<section>
+    <div class="container">
+        <a href="/team/createcontact" class="btn btn-warning">ADD NEW</a>
+        <P></P>
+        <div class="row">
+            {% for contact in contact_list %}
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ contact.name }}</h3>
+                        <h4 class="card-title"># {{ contact.number }}</h4>
+                        <p>
+                            <span class="badge-info">email: {{ contact.email }}</span>
+                        </p>
+                        <p class="card-text">Phone: {{ contact.phone}}</p>
+                        <p class="card-text">Address: {{ contact.address}}</p>
+                        <div>
+                            <a href="/team/{{ contact.id }}/editcontact" class="btn btn-warning">Edit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

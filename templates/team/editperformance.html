@@ -1,0 +1,78 @@
+{% extends 'shared/layout.html' %}
+{% block body %}
+<section>
+    <div class="container py-5">
+        <h2>PLEASE EDIT AS FOLLOWS</h2>
+
+        <div class="card mt-3">
+            <div class="card-header">
+                <h4 class="m-0">EDIT PERFORMANCE</h4>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    {{ form.hidden_tag() }} 
+                    
+                    <div class="form-group">
+                        {{ form.number.label }}
+                        {{ form.number(class = "form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.min.label }}
+                        {{ form.min(class = "form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.reb.label }}
+                        {{ form.reb(class = "form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.pts.label }}
+                        {{ form.pts(class = "form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.ast.label }}
+                        {{ form.ast(class = "form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.stl.label }}
+                        {{ form.stl(class = "form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.blk.label }}
+                        {{ form.blk(class = "form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.to.label }}
+                        {{ form.to(class = "form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.pf.label }}
+                        {{ form.pf(class = "form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.submit(class = "btn btn-primary") }}
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header bg-danger text-white">
+                DELETE PRODUCT
+            </div>
+            <form method="POST" class="card-body">
+                {{ delete_form.hidden_tag() }}
+                <div class="form-group">
+                    
+                    {{ delete_form.confirm }}
+                    
+                    {{ delete_form.confirm.label }}
+                </div>
+                <div class="form-group">
+                    {{ delete_form.submit(class = "btn btn-danger") }}
+                </div>
+            </form>
+        </div>
+
+    </div>
+</section>
+{% endblock %}

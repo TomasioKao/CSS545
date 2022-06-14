@@ -1,0 +1,62 @@
+{% extends 'shared/layout.html' %}
+{% block body %}
+<section>
+    <div class="container py-5">
+        <h2>PLEASE EDIT AS FOLLOWS</h2>
+
+        <div class="card mt-3">
+            <div class="card-header">
+                <h4 class="m-0">EDIT CONTACT</h4>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    {{ form.hidden_tag() }} 
+                    
+                    <div class="form-group">
+                        {{ form.number.label }}
+                        {{ form.number(class = "form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.name.label }}
+                        {{ form.name(class = "form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.phone.label }}
+                        {{ form.phone(class = "form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.email.label }}
+                        {{ form.email(class = "form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.address.label }}
+                        {{ form.address(class = "form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.submit(class = "btn btn-primary") }}
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header bg-danger text-white">
+                DELETE PRODUCT
+            </div>
+            <form method="POST" class="card-body">
+                {{ delete_form.hidden_tag() }}
+                <div class="form-group">
+                    
+                    {{ delete_form.confirm }}
+                    
+                    {{ delete_form.confirm.label }}
+                </div>
+                <div class="form-group">
+                    {{ delete_form.submit(class = "btn btn-danger") }}
+                </div>
+            </form>
+        </div>
+
+    </div>
+</section>
+{% endblock %}
